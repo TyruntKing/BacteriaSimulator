@@ -96,7 +96,7 @@
         //when the run simulation button is clicked we take the input from the user and print it out
         $("#run-simulation").click(function(){
             //checks if all the fields are not null and greater than 0
-            if(($("#select-pathogen :selected").val() != "") && ($("#select-food :selected").val() != '') && ($("#select-temp :selected").val() != '') && ($("#time").val() >= 1) && ($("#cells").val() >= 1) && ($("#time").val() <= 1000) && ($("#cells").val() <= 1000)){
+            if(($("#select-pathogen :selected").val() != "") && ($("#select-food :selected").val() != '') && ($("#select-temp :selected").val() != '') && ($("#time").val() >= 1) && ($("#cells").val() >= 1) && ($("#time").val() <= 1000) && ($("#cells").val() <= 1001)){
                 var checkBox = document.getElementById("time-chk-box");
                 var userID = '<?php echo $user ;?>';
                 /*
@@ -300,7 +300,7 @@
                             swal({
                                 html: true,
                                 title: 'Food is safe to eat!',
-                                text: "Number of Cells: " + cells + '<br>' + " Duration: " + duration + " minutes.",
+                                text: "Number of Cells: " + cells + '<br>' " Duration: " + duration + " minutes.",
                                 imageUrl: 'https://cdn.shopify.com/s/files/1/1061/1924/products/Slightly_Smiling_Face_Emoji_87fdae9b-b2af-4619-a37f-e484c5e2e7a4_large.png?v=1480481059',
                                 imageWidth: 210,
                                 imageHeight: 200,
@@ -419,7 +419,7 @@
                     <label>Starting Cells:</label>
                 </div>
                 <div class="col-md-1" style="margin-right: 15px">
-                    <input type="number" name="cells" id="cells" value="1" min="1" max="1000" step="100" style="width: 50px;">
+                    <input type="number" name="cells" id="cells" value="1" min="1" max="1001" step="100" style="width: 50px;">
                 </div>
             </div>
         </form>
