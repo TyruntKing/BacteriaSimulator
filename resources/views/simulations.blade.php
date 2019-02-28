@@ -62,7 +62,7 @@
         $("#save-simulation").click(function(){
             var userID = '<?php echo $user ;?>';
             if(userID != "-1"){
-                if(($("#select-pathogen :selected").val() != "") && ($("#select-food :selected").val() != '') && ($("#select-temp :selected").val() != '') && ($("#time").val() >= 1) && ($("#cells").val() >= 1) && ($("#time").val() <= 1000) && ($("#cells").val() <= 1000) && ($("#title").val() != '')){
+                if(($("#select-pathogen :selected").val() != "") && ($("#select-food :selected").val() != '') && ($("#select-temp :selected").val() != '') && ($("#time").val() >= 1) && ($("#cells").val() >= 1) && ($("#time").val() <= 1000) && ($("#cells").val() <= 1001) && ($("#title").val() != '')){
                     var pathogen_name = $("#select-pathogen :selected").val();
                     var food_name = $("#select-food :selected").val();
                     var temp = $("#select-temp :selected").text();
@@ -272,7 +272,7 @@
                                         var duration = (minutes*speed);
                                     swal({
                                         title: 'Food is unsafe to eat!',
-                                        text: "Number of Cells: " + cells + "       Duration: " + duration + " minutes.",
+                                        text: "Number of Cells: " + cells + " Duration: " + duration + " minutes.",
                                         imageUrl: 'http://www.dadshopper.com/wp-content/uploads/2016/10/21.png',
                                         imageWidth: 210,
                                         imageHeight: 200,
@@ -298,8 +298,9 @@
                                 var duration = (minutes*speed);
                             if (cells < infectious_dosage) {
                             swal({
+                                html: true,
                                 title: 'Food is safe to eat!',
-                                text: "Number of Cells: " + cells + "       Duration: " + duration + " minutes.",
+                                text: "Number of Cells: " + cells + '<br>' + " Duration: " + duration + " minutes.",
                                 imageUrl: 'https://cdn.shopify.com/s/files/1/1061/1924/products/Slightly_Smiling_Face_Emoji_87fdae9b-b2af-4619-a37f-e484c5e2e7a4_large.png?v=1480481059',
                                 imageWidth: 210,
                                 imageHeight: 200,
@@ -309,7 +310,7 @@
                             else {
                                 swal({
                                         title: 'Food is unsafe to eat!',
-                                        text: "Number of Cells: " + cells + "       Duration: " + duration + " minutes.",
+                                        text: "Number of Cells: " + cells + " Duration: " + duration + " minutes.",
                                         imageUrl: 'http://www.dadshopper.com/wp-content/uploads/2016/10/21.png',
                                         imageWidth: 210,
                                         imageHeight: 200,
@@ -418,7 +419,7 @@
                     <label>Starting Cells:</label>
                 </div>
                 <div class="col-md-1" style="margin-right: 15px">
-                    <input type="number" name="cells" id="cells" value="1" min="1" max="1000" step="100" style="width: 50px;">
+                    <input type="number" name="cells" id="cells" value="1" min="1" max="1001" step="100" style="width: 50px;">
                 </div>
             </div>
         </form>
