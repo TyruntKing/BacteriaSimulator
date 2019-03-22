@@ -215,7 +215,7 @@
                 .attr("fill", function(d) { return color(d.length); });
                 //adding legend to the svg
                                        var quantize = d3.scaleQuantize()
-                                         .domain([ 1, infectious_dosage/10 ])
+                                         .domain([ 1, infectious_dosage ])
                                          .range(["#f9f9f9", "#a6d1a6", "#53a853", "#008000", "#0c3e0c", "#003500", "#000000"]);
                  var log = d3.scaleLog()
                 .domain([ 1, infectious_dosage/100 ])
@@ -426,6 +426,7 @@
                     <input type="number" name="cells" id="cells" value="1" min="1" max="1001" step="100" style="width: 50px;">
                 </div>
             </div>
+            <input type="radio" id="Altsimulation"> Weak immune System<br>
         </form>
     </div>
     <!-- Creating the run simulations button -->
